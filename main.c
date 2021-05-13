@@ -8,10 +8,12 @@
 int main(int argc, char **argv)
 {
 	FILE *file = NULL;
+	stack_t *stack = NULL;
 	size_t buff_size;
 	ssize_t linea;
 	char *buffer = NULL;
 	char *option = NULL;
+	unsigned int i = 0;
 
 	if (argc != 2)
 	{
