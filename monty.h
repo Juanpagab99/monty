@@ -8,6 +8,9 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<unistd.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+#include<fcntl.h>
 
 /*Structures*/
 /**
@@ -39,5 +42,8 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/*Functions prototypes*/
+
 
 #endif /*_MONTY_H_*/
