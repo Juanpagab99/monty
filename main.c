@@ -28,11 +28,11 @@ int main(int argc, char **argv)
 	}
 	while (linea = getline(&buffer, &buff_size, file) != -1)
 	{
-		option = strtok(buffer, " \t\n\r");
-		while (option != NULL)
+		i++;
+		option = strtok(buffer, "\n\t\r ");
+		if (option != NULL && option[0] != "#")
 		{
-			printf("%s\n", option);
-			option = strtok(NULL, " \t\n\r");
+			comp(option, &stack, i);
 		}
 	}
 	exit(EXIT_SUCCESS);

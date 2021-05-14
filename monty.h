@@ -44,6 +44,6 @@ typedef struct instruction_s
 } instruction_t;
 
 /*Functions prototypes*/
-
+void comp(char *option, stack_t **stack, unsigned int i);
 
 #endif /*_MONTY_H_*/
