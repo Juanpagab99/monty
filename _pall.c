@@ -3,9 +3,8 @@
 * _pall - stack values
 * @stack: head
 * @i: line numbers
-*
 */
-void _pall(stack_t **stack, unsigned int i __attribute_((unused)))
+void _pall(stack_t **stack, unsigned int i __attribute__((unused)))
 {
 	stack_t *auxiliar = *stack;
 
@@ -13,10 +12,10 @@ void _pall(stack_t **stack, unsigned int i __attribute_((unused)))
 	{
 		return;
 	}
-	aux = *stack;
-	while (aux != NULL)
+	auxiliar = *stack;
+	while (auxiliar != NULL)
 	{
-		printf("%d\n", aux->n);
-		aux = aux->next;
+		printf("%d\n", auxiliar->n);
+		auxiliar = auxiliar->next;
 	}
 }

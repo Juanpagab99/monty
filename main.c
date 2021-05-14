@@ -7,13 +7,12 @@
 */
 int main(int argc, char **argv)
 {
-	stack_t *head
+	stack_t *head;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	_open(argv[1], &head);
 }
