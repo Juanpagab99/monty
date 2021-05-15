@@ -1,4 +1,21 @@
 #include "monty.h"
+
+/**
+ * _isdigit - is digit or not
+ * @c: number or letter
+ * Return: 1 or 0
+*/
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
 /**
 * _push - add node
 * @stack: pointer to linked list
@@ -9,6 +26,12 @@ void _push(stack_t **stack, unsigned int line_number)
 {
 	char *n;
 	stack_t *new;
+
+	if ((is_digit(n)) == 0)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	n = strtok(NULL, " \n\r\t");
 	if (n == NULL)
