@@ -13,11 +13,7 @@ void get_function(char *option, stack_t **stack, unsigned int line_number)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
-<<<<<<< HEAD
 		{"swap", _swap},
-=======
-		{"pop", _pop},
->>>>>>> 62cb733a6809a0e855c83010519e68f05b7d251c
 		{NULL, NULL}};
 
 	while (instructions[i].opcode != NULL)
