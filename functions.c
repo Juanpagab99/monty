@@ -27,7 +27,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	char *n;
 	stack_t *new;
 
-	if ((is_digit(n)) == 0)
+	if ((_isdigit(n)) == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
