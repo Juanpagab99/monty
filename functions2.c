@@ -49,3 +49,24 @@ void _swap(stack_t **stack, unsigned int line_number)
 	auxiliar->next = *stack;
 	*stack = auxiliar;
 }
+/**
+* _add - adds the top two elements of the stack
+* @stack: important pointer
+* @line_number: line number
+*/
+void _add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+	int sum = 0;
+
+	if (*stack == NULL || stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp = *stack;
+	sum = tmp->n + tmp->next->n;
+	tmp->next->n = sum;
+	*stack = tmp->next;
+	free(tmp);
+}
