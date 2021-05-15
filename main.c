@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	while (getline(&line, &len, stream) != EOF)
 	{
 		line_number++;
-		delim = strtok(line, " \t\n\r\a");
+		delim = strtok(line, " \t\n\r");
 		if (delim != NULL && delim[0] != '#')
 		{
 			get_function(delim, &stack, line_number);

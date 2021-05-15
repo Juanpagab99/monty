@@ -1,4 +1,21 @@
 #include "monty.h"
+
+/**
+ * _isdigit - is digit or not
+ * @c: number or letter
+ * Return: 1 or 0
+*/
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
 /**
 * _push - add node
 * @stack: pointer to linked list
@@ -9,6 +26,12 @@ void _push(stack_t **stack, unsigned int line_number)
 {
 	char *n;
 	stack_t *new;
+
+	if ((_isdigit(n)) == 0)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	n = strtok(NULL, " \n\r\t");
 	if (n == NULL)
@@ -73,4 +96,29 @@ void _pint(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+}
+
+/**
+* _pop - function that removes the top element of the stack
+* @stack: pointer to linked list
+* @line_number: line number
+*
+* Return: Nothing.
+*/
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	if (*stack == NULL || stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	if (tmp->next)
+		*stack = (*stack)->next;
+	else
+		*stack = NULL;
+
+	free(tmp);
 }
