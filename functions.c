@@ -5,17 +5,24 @@
  * @c: number or letter
  * Return: 1 or 0
 */
-int _isdigit(int c)
+int _isdigit(char *c)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
+	if (!c || *c == '\0')
 		return (0);
+
+	if (*c == '-')
+		c++;
+
+	while (*c)
+	{
+		if (isdigit(*c) == 0)
+			return (0);
+		c++;
 	}
+
+	return (1);
 }
+
 /**
 * _push - add node
 * @stack: pointer to linked list
@@ -25,38 +32,33 @@ int _isdigit(int c)
 void _push(stack_t **stack, unsigned int line_number)
 {
 	char *n;
-	stack_t *new;
+	stack_t *node;
 
+	n = strtok(NULL, " \n\r\t\a");
 	if ((_isdigit(n)) == 0)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	n = strtok(NULL, " \n\r\t");
-	if (n == NULL)
-	{
-		printf("L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
+	node = malloc(sizeof(stack_t));
+	if (node == NULL)
 	{
 		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
+		free(node);
 	}
 
-	new->n = atoi(n);
-	new->prev = NULL;
-	new->next = *stack;
+	node->n = atoi(n);
+	node->prev = NULL;
+	node->next = *stack;
 
 	if (*stack != NULL)
 	{
-		(*stack)->prev = new;
+		(*stack)->prev = node;
 	}
 
-	*stack = new;
+	*stack = node;
 }
 /**
 * _pall - all values on the stack
