@@ -23,7 +23,6 @@ void _pop(stack_t **stack, unsigned int line_number)
 	free(tmp);
 }
 
-
 /**
 * _swap - add new node
 * @stack: important pointer
@@ -69,4 +68,16 @@ void _add(stack_t **stack, unsigned int line_number)
 	tmp->next->n = sum;
 	*stack = tmp->next;
 	free(tmp);
+}
+/**
+* _nop - a function that does... Nothing!
+* @stack: important pointer
+* @line_number: line number
+*
+* Return: Nothing hehe.
+*/
+void _nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
 }
