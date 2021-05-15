@@ -47,10 +47,10 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 ### Files content
 
-| File name        | Descripción |
-| ---------------- | ----------- |
-| `closing.c`      |             |
-| `functions.c`    |             |
-| `get_function.c` |             |
-| `main.c`         |             |
-| `monty.h`        |             |
+| File name        | Descripción                                   |
+| ---------------- | --------------------------------------------- |
+| `closing.c`      | Free all variables                            |
+| `functions.c`    | This file contains all functions              |
+| `get_function.c` | This file contains a structure with functions |
+| `main.c`         | Main file                                     |
+| `monty.h`        | Header file                                   |
