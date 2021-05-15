@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+* _push - add node
+* @stack: pointer to linked list
+* @line_number: line number
+*
+*/
 void _push(stack_t **stack, unsigned int line_number)
 {
 	char *n;
@@ -30,7 +35,11 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	*stack = new;
 }
-
+/**
+* _pall - all values on the stack
+* @stack: pointer to linked list
+* @line_number: line number
+*/
 void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
@@ -46,7 +55,11 @@ void _pall(stack_t **stack, unsigned int line_number)
 		}
 	}
 }
-
+/**
+* _pint - show first variable
+* @stack: pointer to linked list
+* @line_number: line number
+*/
 void _pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head = *stack;

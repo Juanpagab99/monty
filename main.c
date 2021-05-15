@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+* main - main function
+* @argc: number of arguments
+* @argv: arguments
+* Return: EXIT_FAILURE or EXIT_SUCCESS
+*/
 int main(int argc, char *argv[])
 {
 	FILE *stream = NULL;
