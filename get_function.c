@@ -26,6 +26,9 @@ void get_function(char *option, stack_t **stack, unsigned int line_number)
 		i++;
 	}
 
-	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, option);
-	exit(EXIT_FAILURE);
+	if (strlen(option) != 0 && option[0] != '#')
+	{
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, option);
+		exit(EXIT_FAILURE);
+	}
 }
