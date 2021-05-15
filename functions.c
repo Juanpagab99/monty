@@ -99,25 +99,3 @@ void _pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
-
-/**
-* _pop - function that removes the top element of the stack
-* @stack: pointer to linked list
-* @line_number: line number
-*
-* Return: Nothing.
-*/
-void _pop(stack_t **stack, unsigned int line_number)
-{
-	stack_t *tmp = *stack;
-
-	if (*stack == NULL || stack == NULL)
-	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	*stack = (*stack)->next;
-
-	free(tmp);
-}
